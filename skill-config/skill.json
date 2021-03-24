@@ -1,0 +1,96 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:eu-central-1:051886484530:function:RingABell"
+        },
+        "interfaces": [
+          {
+            "supportedViewports": [
+              {
+                "maxHeight": 540,
+                "maxWidth": 960,
+                "minHeight": 540,
+                "minWidth": 960,
+                "mode": "TV",
+                "shape": "RECTANGLE"
+              },
+              {
+                "maxHeight": 480,
+                "maxWidth": 480,
+                "minHeight": 480,
+                "minWidth": 480,
+                "mode": "HUB",
+                "shape": "ROUND"
+              },
+              {
+                "maxHeight": 600,
+                "maxWidth": 1024,
+                "minHeight": 600,
+                "minWidth": 1024,
+                "mode": "HUB",
+                "shape": "RECTANGLE"
+              },
+              {
+                "maxHeight": 800,
+                "maxWidth": 1280,
+                "minHeight": 800,
+                "minWidth": 1280,
+                "mode": "HUB",
+                "shape": "RECTANGLE"
+              },
+              {
+                "maxHeight": 480,
+                "maxWidth": 960,
+                "minHeight": 480,
+                "minWidth": 960,
+                "mode": "HUB",
+                "shape": "RECTANGLE"
+              }
+            ],
+            "type": "ALEXA_PRESENTATION_APL"
+          }
+        ]
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [
+      {
+        "name": "alexa::devices:all:address:full:read"
+      },
+      {
+        "name": "alexa::devices:all:geolocation:read"
+      }
+    ],
+    "privacyAndCompliance": {
+      "locales": {
+        "de-DE": {}
+      }
+    },
+    "publishingInformation": {
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "category": "HEALTH_AND_FITNESS",
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "de-DE": {
+          "description": "Der Skill kann sich verschiedene Arten von Erinnerungen (temporär, permanent, mit und ohne Zeit oder Ort) merken und frägt diese beim Verlassen des Hauses ab.",
+          "examplePhrases": [
+            "Alexa, sage ring a bell mache eine Erinnerung am Montag um 14 Uhr",
+            "Alexa, sage ring a bell lösche die Erinnerung an Schlüssel mitnehmen",
+            "Alexa, sage ring a bell ich verlasse das Haus"
+          ],
+          "keywords": [],
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/5825/c6419d05d527483e85ac88fc1dabb7b0/APP_ICON_LARGE?versionId=JJlZyJa.IM2u7UVuGjkQob5I9y6qMfSQ&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210128T174011Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAWBV6LQ4QKQTYKJJO%2F20210128%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=b72730a10e2e0cb85ced060cb72480a6d779c221bf3d65a73c62e3daa9437b46",
+          "name": "RingABell",
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/6d23/50bc5838ad304439bf97b637b74df8d0/APP_ICON?versionId=zC.kOHkE6fTlq0TtM_Px_EFQ9TMiRMBx&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210128T174011Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAWBV6LQ4QKQTYKJJO%2F20210128%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=7c7a97f16b35527ec855b7c0e337c887c94256b6b953f6d1446388aab1116239",
+          "summary": "Ein Skill um der Benutzer*innen beim Hausverlassen an Dinge erinnert"
+        }
+      },
+      "testingInstructions": "Sample Testing Instructions."
+    }
+  }
+}

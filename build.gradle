@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'edu.hm.se1.group3.j2020'
+version '0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.amazon.alexa', name: 'ask-sdk', version:'2.36.0'
+    compile group: 'com.amazonaws', name: 'aws-lambda-java-log4j2', version:'1.1.0'
+    compile group: 'net.aksingh', name: 'owm-japis', version:'2.5.3.0'
+}
+
+jar {
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

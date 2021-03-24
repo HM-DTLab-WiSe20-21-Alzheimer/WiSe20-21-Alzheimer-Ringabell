@@ -1,0 +1,374 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "ring a bell",
+            "modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "LOW"
+                }
+            },
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "beende die App",
+                        "stoppe den Skill",
+                        "brich ab",
+                        "abbrechen"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "was ist das hier",
+                        "ich weiß nicht was ich machen soll",
+                        "gib mir eine Anleitung",
+                        "wie funktioniert diese App",
+                        "wie funktioniert das hier",
+                        "hilf mir",
+                        "was macht diese App",
+                        "hilfe"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "LeaveIntent",
+                    "slots": [
+                        {
+                            "name": "Wohnort",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "ich verlasse das Haus",
+                        "ich verlasse das {Wohnort}",
+                        "Servus",
+                        "auf Wiedersehen",
+                        "bis Später",
+                        "ich verlasse {Wohnort}",
+                        "ich gehe aus {Wohnort}",
+                        "ich gehe raus",
+                        "ob ich etwas vergessen habe",
+                        "Habe ich etwas vergessen"
+                    ]
+                },
+                {
+                    "name": "ReassuranceIntent",
+                    "slots": [
+                        {
+                            "name": "toReassure",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "ich habe {toReassure}",
+                        "ich habe {toReassure} gemacht",
+                        "ich habe an {toReassure} gedacht",
+                        "ich habe {toReassure} erledigt",
+                        "ich habe an alles gedacht"
+                    ]
+                },
+                {
+                    "name": "StoreIntent",
+                    "slots": [
+                        {
+                            "name": "toStore",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "temporary",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "day",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME"
+                        }
+                    ],
+                    "samples": [
+                        "speichern um {time}",
+                        "um {time} muss ich das noch machen",
+                        "merke dir für {time}",
+                        "erinnere mich um {time}",
+                        "ist das temporär {temporary}",
+                        "speicher die folgende Erinnerung",
+                        "speichere {toStore}",
+                        "speichern",
+                        "merke {toStore}",
+                        "ich willl am {day} um {time} erinnert werden",
+                        "ich will am {day} erinnert werden",
+                        "ich will erinnert werden",
+                        "ich will am {day} um {time} folgendes erinnert werden",
+                        "mich an {day} um {time} an folgendes zu erinnern",
+                        "mache eine Erinnerung für {day} um {time}",
+                        "erinnere mich am {day} um {time}",
+                        "merke dir für {day} um {time}",
+                        "ich will am {day} an folgendes erinnert werden",
+                        "ich will an etwas erinnert werden",
+                        "ich möchte am {day}",
+                        "ich möchte",
+                        "mich an {day} an folgendes zu erinnern",
+                        "mich an folgendes zu erinnern",
+                        "erinnere mich beim rausgehen an",
+                        "mache eine Erinnerung für {day}",
+                        "mache eine Erinnerung",
+                        "erinnere mich {day} an",
+                        "erinnere mich an",
+                        "merke dir für {day}",
+                        "merke"
+                    ]
+                },
+                {
+                    "name": "DeleteIntent",
+                    "slots": [
+                        {
+                            "name": "temporary",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "toDelete",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "day",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME"
+                        }
+                    ],
+                    "samples": [
+                        "vom {day} um {time} folgendes zu löschen",
+                        "die Erinnerung von {day} um {time} zu löschen",
+                        "die Erinnerung von {day} zu löschen",
+                        "die Erinnerung an {toDelete} zu löschen",
+                        "tempräres löschen sagen wir {temporary}",
+                        "lösche {toDelete}",
+                        "lösche",
+                        "eliminiere",
+                        "eliminiere {toDelete}",
+                        "streiche",
+                        "streiche {toDelete}",
+                        "vergiss",
+                        "lösche Erinnerungen",
+                        "vergiss die Erinnerung an {toDelete}",
+                        "lösche die Erinnerung an {toDelete}",
+                        "die Erinnerung an {toDelete} zu vergessen"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "StoreIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "toStore",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1389290807190.227558861182"
+                            }
+                        },
+                        {
+                            "name": "temporary",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.414116825911.1411651167434"
+                            },
+                            "validations": [
+                                {
+                                    "type": "isInSet",
+                                    "prompt": "Slot.Validation.40115125988.1528118389489.366256096010",
+                                    "values": [
+                                        "ja",
+                                        "nein"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "day",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "DeleteIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "temporary",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.686992703717.430631291299"
+                            },
+                            "validations": [
+                                {
+                                    "type": "isInSet",
+                                    "prompt": "Slot.Validation.686992703717.430631291299.502408556427",
+                                    "values": [
+                                        "ja",
+                                        "nein"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "toDelete",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.303285452177.288602522034"
+                            }
+                        },
+                        {
+                            "name": "day",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1389290807190.227558861182",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Was soll ich mir merken"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Woran möchtest du erinnert werden?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "An welche Erinnerung soll ich dich erinnern?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1389290807190.227558861182",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "ISt diese Erinnerung korrekt?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.414116825911.1411651167434",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "soll ich dich nur einmal daran erinnern?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Ist diese Erinnerung temporär?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.303285452177.288602522034",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "welche Erinnerung benötigst du nicht mehr"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "woran möchtest du nicht mehr erinnert werden"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Welche Erinnerung soll ich löschen"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.686992703717.430631291299",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "sollte ich dich einmalig daran erinnern"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Ist die zu löschende Erinnerung einmalig geplant"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Möchtest du eine temporäre Erinnerung löschen"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.686992703717.430631291299.502408556427",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "ich habe dich nicht verstanden. Antworte bitte mit ja oder nein."
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.40115125988.1528118389489.366256096010",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ich habe dich leider nicht verstanden. Möchtest du nur einmal daran erinnert werden. Antworte bitte mit Ja oder Nein"
+                    }
+                ]
+            }
+        ]
+    }
+}

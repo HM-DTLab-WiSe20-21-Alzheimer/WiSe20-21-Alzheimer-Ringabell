@@ -1,0 +1,35 @@
+{
+    "type": "APL",
+    "version": "1.5",
+    "settings": {},
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.2.0"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": [],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "temp"
+        ],
+        "items": [
+            {
+                "type": "AlexaTextList",
+                "id": "ringABellList",
+                "headerTitle": "Erinnerungen",
+                "headerBackButton": false,
+                "backgroundBlur": false,
+                "backgroundColorOverlay": true,
+                "backgroundImageSource": "${temp.textListData.sourceBackground.url}",
+                "listItems": "${temp.textListData.listItems}"
+            }
+        ]
+    }
+}
